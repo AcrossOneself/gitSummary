@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with gitSummary App
+
+This aplication displays git data summary. This is initial stage. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
