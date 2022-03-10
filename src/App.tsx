@@ -1,6 +1,5 @@
 import { Link, Route } from "wouter";
-import InboxPage from "pages/inbox-page";
-
+import InboxPage from "./pages/inbox-page"
 function App() {
   return (
     <div>
