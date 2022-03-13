@@ -5,21 +5,27 @@ import SearchUserPage from "../search-user-page";
 
 function HomePage() {
     return (
-        <div>
-            <Link href="/search-user">
-                <p>Search User</p>
+        <div className="bg-lightBkgnd font-sans my-[1rem]">
 
-            </Link>
-            <Link href="/search-project">
-                <p>Search Project</p>
-            </Link>
-            <Link href="/search-repo">
-                <p>Search User</p>
-            </Link>
+            <nav className="flex w-full h-full justify-evenly">
+                {[
+                    ["Search User", "/search-user", "bg-lightText"],
+                    ["Search Project", "/search-project", "bg-lightAccent"],
+                    ["Search Repo", "/search-repo", "bg-darkAccent"]
+                ].map(([title, url, bkgndColor]) => (
+                    <div className={`${bkgndColor} flex justify-center content-center w-[21rem] h-[3rem] rounded-lg`}>
+                        <Link href={url}>
+                            <div className="flex items-center text-xl text-lightBkgnd font-medium">{title}</div>
+                        </Link>
+                    </div>
+                ))}
+            </nav>
 
-            <Route path="/search-user" component={SearchUserPage} />
-            <Route path="/search-project" component={SearchProjectPage} />
-            <Route path="/search-repo" component={SearchRepoPage} />
+            <div className="my-[2rem] flex justify-center content-center">
+                <Route path="/search-user" component={SearchUserPage} />
+                <Route path="/search-project" component={SearchProjectPage} />
+                <Route path="/search-repo" component={SearchRepoPage} />
+            </div>
         </div>
     );
 }

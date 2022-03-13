@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .title {
+        @apply text-lg font-semibold py-4;
+    }
+}
