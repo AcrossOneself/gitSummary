@@ -3,7 +3,7 @@ import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export function Fetcher(url: string, variant: "user" | "project" | "repo") {
+export function Fetcher(url: string, variant: string) {
 
     const { data, error } = useSWR(
         url,
@@ -43,17 +43,8 @@ export function Fetcher(url: string, variant: "user" | "project" | "repo") {
         );
     } else {
         return (
-            <div>Missing data</div>
+            <div>TO DO</div>
         )
     }
 
-}
-
-export default function GitDisplay() {
-    return Fetcher(`https://api.github.com/repos/reactjs/react-a11y`, "repo");
-}
-
-export function GitUser() {
-
-    return Fetcher("https://api.github.com/users/octocat", "user");
 }

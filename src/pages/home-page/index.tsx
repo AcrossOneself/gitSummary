@@ -1,9 +1,11 @@
 import { Link, Route } from "wouter";
+
 import SearchProjectPage from "../search-project-page";
 import SearchRepoPage from "../search-repo-page";
 import SearchUserPage from "../search-user-page";
 
 function HomePage() {
+
     return (
         <div className="bg-lightBkgnd font-sans my-[1rem]">
 
@@ -22,7 +24,8 @@ function HomePage() {
             </nav>
 
             <div className="my-[2rem] flex justify-center content-center">
-                <Route path="/search-user" component={SearchUserPage} />
+                <Route path="/search-user"><SearchUserPage /></Route>
+                <Route path="/search-user/:user" />
                 <Route path="/search-project" component={SearchProjectPage} />
                 <Route path="/search-repo" component={SearchRepoPage} />
             </div>

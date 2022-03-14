@@ -6,4 +6,25 @@
     .title {
         @apply text-lg font-semibold py-4;
     }
+
+    .input {
+        @apply px-4 py-1 mr-8 rounded border-solid border-2 border-darkText bg-darkBkgnd text-darkText;
+    }
+
+    .section {
+        @apply mt-8
+    }
+
+    .button-darkBkgnd {
+        @apply bg-darkBkgnd
+    }
+
+    .button-darkAccent {
+        @apply bg-darkAccent
+    }
+
+    .button-lightAccent {
+        @apply bg-lightAccent
+    }
+
 }
