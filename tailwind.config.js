@@ -7,13 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    colors: {
-      darkText: '#393B45',
-      lightText: '#6E7889',
-      lightBkgnd: '#FFFFFF  ',
-      darkBkgnd: '#D8D9DE',
-      lightAccent: '#F3B54A',
-      darkAccent: '#584848'
+    colors: {          
+      white: '#FFFFFF',
+      lightGrey: '#D2D3D3',
+      grey: '#555759',
+      darkGrey: '#363636',
+      brightPink: '#E8175D',
+      darkPink: '#CC527A'
     },
     spacing: {
       0: '0',

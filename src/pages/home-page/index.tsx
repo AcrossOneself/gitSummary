@@ -1,36 +1,59 @@
-import { Link, Route } from "wouter";
+import { PropsWithChildren } from "react";
+import { Link, Route, Router, Switch, useRoute } from "wouter";
 
 import SearchProjectPage from "../search-project-page";
 import SearchRepoPage from "../search-repo-page";
 import SearchUserPage from "../search-user-page";
 
+export interface Props {
+    href: string;
+}
+
 function HomePage() {
 
+    const ActiveLink = (props: PropsWithChildren<Props>) => {
+        const [isActive] = useRoute(props.href);
+        return (
+            <Link {...props}>
+                <a
+                    href={props.href}
+                    className={isActive ? "activeLink" : ""}
+                >{props.children}</a>
+            </Link>
+        );
+    };
+
     return (
-        <div className="bg-lightBkgnd font-sans my-[1rem]">
+        <Router>
+            <div className="bg-lightGrey w-screen h-screen font-sans text-darkGrey">
+                <nav className="nav">
+                    {[
+                        ["Search User", "/search-user"],
+                        ["Search Project", "/search-project"],
+                        ["Search Repo", "/search-repo"]
+                    ].map(([title, url]) => (
+                        <div key={title} className={`navElement`}>
+                            <ActiveLink href={url}>
+                                <div className="navButton">{title}</div>
+                            </ActiveLink>
+                        </div>
+                    ))}
+                </nav>
 
-            <nav className="flex w-full h-full justify-evenly">
-                {[
-                    ["Search User", "/search-user", "bg-lightText"],
-                    ["Search Project", "/search-project", "bg-lightAccent"],
-                    ["Search Repo", "/search-repo", "bg-darkAccent"]
-                ].map(([title, url, bkgndColor]) => (
-                    <div key={title} className={`${bkgndColor} flex justify-center content-center w-[21rem] h-[3rem] rounded-lg`}>
-                        <Link href={url}>
-                            <div className="flex items-center text-xl text-lightBkgnd font-medium">{title}</div>
-                        </Link>
-                    </div>
-                ))}
-            </nav>
-
-            <div className="my-[2rem] flex justify-center content-center">
-                <Route path="/search-user"><SearchUserPage /></Route>
-                <Route path="/search-user/:user" />
-                <Route path="/search-project" component={SearchProjectPage} />
-                <Route path="/search-repo" component={SearchRepoPage} />
+                <main className="min-h-full h-full px-8 bg-white flex justify-start content-center ">
+                    <Switch>
+                        <Route path="/search-user"><SearchUserPage /></Route>
+                        <Route path="/search-user/:user" />
+                        <Route path="/search-project" component={SearchProjectPage} />
+                        <Route path="/search-repo" component={SearchRepoPage} />
+                    </Switch>
+                </main>
             </div>
-        </div>
+
+            );
+        </Router>
     );
+
 }
 
 export default HomePage;

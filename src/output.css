@@ -466,6 +466,41 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navElement {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.activeLink {
+  border-bottom-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(232 23 93 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(232 23 93 / var(--tw-text-opacity));
+}
+
 .title {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -480,85 +515,68 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 2px;
   border-style: solid;
   --tw-border-opacity: 1;
-  border-color: rgb(57 59 69 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(216 217 222 / var(--tw-bg-opacity));
+  border-color: rgb(54 54 54 / var(--tw-border-opacity));
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   --tw-text-opacity: 1;
-  color: rgb(57 59 69 / var(--tw-text-opacity));
+  color: rgb(54 54 54 / var(--tw-text-opacity));
+}
+
+.input:focus-within, .input:focus-visible, .input:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(232 23 93 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(54 54 54 / var(--tw-text-opacity));
 }
 
 .section {
   margin-top: 2rem;
 }
 
-.my-\[1rem\] {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.button {
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-weight: 500;
 }
 
-.my-\[2rem\] {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.button-brightPink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 23 93 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .flex {
   display: flex;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .h-full {
   height: 100%;
 }
 
-.h-\[3rem\] {
-  height: 3rem;
+.min-h-full {
+  min-height: 100%;
 }
 
-.min-h-\[30rem\] {
-  min-height: 30rem;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.w-\[21rem\] {
-  width: 21rem;
-}
-
-.w-\[90\%\] {
-  width: 90%;
-}
-
-.flex-col {
-  flex-direction: column;
+.w-screen {
+  width: 100vw;
 }
 
 .content-center {
   align-content: center;
 }
 
-.items-center {
-  align-items: center;
-}
-
 .justify-start {
   justify-content: flex-start;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
 }
 
 .rounded {
@@ -573,60 +591,31 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-style: solid;
 }
 
-.border-lightAccent {
+.border-darkGrey {
   --tw-border-opacity: 1;
-  border-color: rgb(243 181 74 / var(--tw-border-opacity));
+  border-color: rgb(54 54 54 / var(--tw-border-opacity));
 }
 
-.border-darkAccent {
-  --tw-border-opacity: 1;
-  border-color: rgb(88 72 72 / var(--tw-border-opacity));
+.bg-lightGrey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 211 211 / var(--tw-bg-opacity));
 }
 
-.border-lightText {
-  --tw-border-opacity: 1;
-  border-color: rgb(110 120 137 / var(--tw-border-opacity));
-}
-
-.border-darkText {
-  --tw-border-opacity: 1;
-  border-color: rgb(57 59 69 / var(--tw-border-opacity));
-}
-
-.bg-lightBkgnd {
+.bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-lightText {
-  --tw-bg-opacity: 1;
-  background-color: rgb(110 120 137 / var(--tw-bg-opacity));
-}
-
-.bg-lightAccent {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 181 74 / var(--tw-bg-opacity));
-}
-
-.bg-darkAccent {
-  --tw-bg-opacity: 1;
-  background-color: rgb(88 72 72 / var(--tw-bg-opacity));
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.font-medium {
-  font-weight: 500;
-}
-
-.text-lightBkgnd {
+.text-darkGrey {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(54 54 54 / var(--tw-text-opacity));
 }
