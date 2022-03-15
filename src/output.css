@@ -551,6 +551,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.link {
+  --tw-text-opacity: 1;
+  color: rgb(232 23 93 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 .flex {
   display: flex;
 }

@@ -1,6 +1,7 @@
 module.exports = {
   content: [
     './public/index.html',
+    './src/App.tsx',
     './src/pages/**/index.tsx',
     './src/components/**/*.tsx',
     './src/assets/**/*.tsx'
