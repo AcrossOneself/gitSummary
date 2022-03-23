@@ -31,16 +31,7 @@ export function Fetcher(url: string, variant: string) {
         return (
             <div>In preparation</div>
         );
-    } else if (variant === "repo") {
-        return (
-            <div>
 
-                <div className="title">REPO ID: {data.id}</div>
-                <div>Repo Name: {data.name}</div>
-                <div>Repo status: {data.private ? "private" : "public"}</div>
-
-            </div>
-        );
     } else {
         return (
             <div>TO DO</div>
