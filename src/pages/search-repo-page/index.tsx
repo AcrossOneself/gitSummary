@@ -1,10 +1,10 @@
 import useFetch from "../../hooks/use-fetch";
-import Loading from "../../components/loading";
-import Error from "../../components/error";
+import DisplayLoading from "../../components/display-loading";
+import DisplayError from "../../components/display-error";
 
-function SearchRepoPage() {
+const SearchRepoPage = () => {
 
-  const repo = "reactjs/react-a11y234";
+  const repo = "reactjs/react-a11y";
   const { data, isLoading, isError } = useFetch(`https://api.github.com/repos/${repo}`)
 
   return (
@@ -17,8 +17,8 @@ function SearchRepoPage() {
           <div>Repo status: {data.private ? "private" : "public"}</div>
         </div>
       )}
-      {!!isLoading && <Loading />}
-      {!!isError && <Error />}
+      {!!isLoading && <DisplayLoading />}
+      {!!isError && <DisplayError message="Please provide coreect repository name" />}
     </div>
 
   );

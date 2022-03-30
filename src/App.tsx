@@ -1,5 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Link, Route, Router, Switch, useRoute } from "wouter";
+import DisplayData from "./components/display-data";
+import CheckQueryLimit from "./pages/check-query-limit";
 
 import HomePage from "./pages/home-page";
 import SearchProjectPage from "./pages/search-project-page";
@@ -31,7 +33,8 @@ function App() {
                     {[
                         ["Search User", "/search-user"],
                         ["Search Project", "/search-project"],
-                        ["Search Repo", "/search-repo"]
+                        ["Search Repo", "/search-repo"],
+                        ["CheckQueryLimit", "/query-limit"]
                     ].map(([title, url]) => (
                         <div key={title} className={`navElement`}>
                             <ActiveLink href={url}>
@@ -45,9 +48,10 @@ function App() {
                     <Switch>
                         <Route path="/"><HomePage /></Route>
                         <Route path="/search-user"><SearchUserPage /></Route>
-                        <Route path="/search-user/:user" />
-                        <Route path="/search-project" component={SearchProjectPage} />
-                        <Route path="/search-repo" component={SearchRepoPage} />
+                        <Route path="/search-user?user=:user"> <DisplayData /></Route>
+                        <Route path="/search-project"><SearchProjectPage /></Route>
+                        <Route path="/search-repo"><SearchRepoPage /></Route>
+                        <Route path="/query-limit"><CheckQueryLimit /></Route>
                         <Route path="/:rest*" component={() => <h1>Not Found</h1>} />
                     </Switch>
                 </main>

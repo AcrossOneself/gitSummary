@@ -558,6 +558,14 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-line: underline;
 }
 
+.error {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(232 23 93 / var(--tw-text-opacity));
+}
+
 .flex {
   display: flex;
 }
@@ -592,6 +600,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-solid {

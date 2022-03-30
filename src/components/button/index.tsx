@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button: React.FC<Props> = ({
+const Button: React.FC<ButtonProps> = ({
     border,
     color,
     children,
@@ -25,7 +25,7 @@ const Button: React.FC<Props> = ({
     );
 }
 
-interface Props {
+interface ButtonProps {
     border: string;
     color: string;
     children?: React.ReactNode;

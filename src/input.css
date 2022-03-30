@@ -55,4 +55,8 @@
     .link {
         @apply text-brightPink underline
     }
+
+    .error {
+        @apply text-brightPink font-semibold py-8
+    }
 }
